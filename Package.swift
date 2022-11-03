@@ -20,9 +20,12 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "SWRevealViewController",
-            dependencies: []),
-        .testTarget(
-            name: "SWRevealViewControllerTests",
-            dependencies: ["SWRevealViewController"]),
+            dependencies: [],
+            path: "Sources",
+            publicHeadersPath: "include",
+            cSettings: [
+                .headerSearchPath("**")
+            ]
+        )
     ]
 )
